@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FourPlace.ListViewPage1">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="Button"
+               Clicked="Button_Clicked2" 
+               IsEnabled="True"/>
+            <Button x:Name="Button2"
+               Clicked="Button_Clicked" 
+               IsEnabled="True"/>
+        </StackLayout>
+        <ListView x:Name="MyListView"
+                ItemsSource="{Binding Items}"
+                ItemTapped="Handle_ItemTapped"
+                CachingStrategy="RecycleElement">
+        <!--<d:ListView.ItemsSource>
+                <x:Array Type="{x:String}">
+                </x:Array>
+        </d:ListView.ItemsSource>-->
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding Title}" ImageSource="{Binding ImageId, StringFormat='https://td-api.julienmialon.com/images/{0:F0}'}" Detail="{Binding Description}"/>
+                </DataTemplate>
+        </ListView.ItemTemplate>
+    
+        <!--Custom View Cells-->
+        <!--
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout>
+                <Label Text="{Binding Text}" 
+                       d:Text="{Binding .}"
+                       Style="{DynamicResource ListItemTextStyle}" />
+                <Label Text="{Binding Detail}" 
+                       d:Text="Detail"
+                       Style="{DynamicResource ListItemDetailTextStyle}"/>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+        -->
+      </ListView>
+    </StackLayout>
+</ContentPage>

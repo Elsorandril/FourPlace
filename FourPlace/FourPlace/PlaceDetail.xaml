@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             mc:Ignorable="d"
+             x:Class="FourPlace.PlaceDetail">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+                <Entry x:Name="TitleLabel"
+                    Text="{Binding Item.Title}"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Fill" />
+                <Label  x:Name="DescriptionLabel"
+                    Text=""
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Fill" />
+                <Image  x:Name="ImageItem"
+                    Source="{Binding Item.ImageId, StringFormat='https://td-api.julienmialon.com/images/{0:F0}'}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <maps:Map x:Name="map" 
+                    HeightRequest="200"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="FillAndExpand" />
+                <StackLayout Orientation="Horizontal"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                    <Label  x:Name="LatLabel"
+                    Text=""
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" />
+                    <Label  x:Name="LonLabel"
+                    Text=""
+                    VerticalOptions="Start" 
+                    HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout>
+                    <ListView x:Name="MyListView"
+                        ItemsSource="{Binding Items}"
+                        CachingStrategy="RecycleElement">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout Orientation="Vertical">
+                                            <Entry Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" IsEnabled="False"/>
+                                            <Entry Text="{Binding Path=Author.Email}" IsEnabled="False"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding Text}" IsEnabled="False"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

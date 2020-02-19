@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FourPlace.Profile">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="First"
+                Text="{Binding Name}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="Last"
+                Text="{Binding Surname}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="Mail"
+                Text="{Binding Email}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="OPWD"
+                Text="{Binding Opwd}"
+                IsPassword="True"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="NPWD"
+                Text="{Binding Npwd}"
+                IsPassword="True"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="Button"
+               Text="Profile Edit"
+               Clicked="Button_Clicked" 
+               IsEnabled="True"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

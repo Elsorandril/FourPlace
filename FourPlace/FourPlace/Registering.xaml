@@ -4,34 +4,34 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="FourPlace.MainPage">
-
-    <StackLayout
-           HorizontalOptions="CenterAndExpand"
-           VerticalOptions="Center">
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+             x:Class="FourPlace.Registering">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Registering" 
            HorizontalOptions="CenterAndExpand"
            VerticalOptions="Center" />
-        <Entry x:Name="ID"
-           Placeholder="ID" 
+            <Entry x:Name="Email"
+           Placeholder="Email" 
            HorizontalOptions="FillAndExpand"
            VerticalOptions="Center"/>
-        <Entry x:Name="Pwd"
+            <Entry x:Name="FirstN"
+           Placeholder="First Name" 
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="Center" />
+            <Entry x:Name="LastN"
+           Placeholder="Last Name" 
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="Center" />
+            <Entry x:Name="Pwd"
            Placeholder="Password" 
            IsPassword="True"
            HorizontalOptions="FillAndExpand"
            VerticalOptions="Center" />
-        <Button Text="Connect"
-           HorizontalOptions="FillAndExpand"
-           VerticalOptions="Center"
-           Clicked="Button_Clicked" 
-           IsEnabled="True"/>
-        <Button Text="Register"
+            <Button Text="Register"
            HorizontalOptions="FillAndExpand"
            VerticalOptions="Center"
            Clicked="Register" 
            IsEnabled="True"/>
-    </StackLayout>
-
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
